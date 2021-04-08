@@ -175,16 +175,16 @@ namespace AsynchronousGrab
 
             if (true == m_Acquiring)
             {
-                LogMessage("new frame from Camera#1");
-
                 // Display image
                 Image image = args.Image;
                 if (null != image)
                 {
+                    LogMessage("Camera #1 new frame received, frame id = " + args.ID);
                     m_PictureBox.Image = image;
                 }
                 else
                 {
+                    LogMessage("Camera #1 new frame received, frame id = " + args.ID + ", but image is null");
                     LogMessage("An acquisition error occurred. Reason: " + args.Exception.Message);
 
                     try
@@ -222,7 +222,7 @@ namespace AsynchronousGrab
 
             if (true == m_Acquiring2) // 1 means camera #2
             {
-                LogMessage("new frame from Camera#2");
+                LogMessage("Camera #2 new frame received, frame id = " + args.ID);
 
                 // Display image
                 Image image = args.Image;
@@ -233,6 +233,7 @@ namespace AsynchronousGrab
                 }
                 else
                 {
+                    LogMessage("Camera #2 new frame received, frame id = " + args.ID + ", but image is null");
                     LogMessage("OnFrameReceived2(): An acquisition error occurred for camera #2. Reason: " + args.Exception.Message);
 
                     try
@@ -420,7 +421,7 @@ namespace AsynchronousGrab
                 }
                 catch (Exception exception)
                 {
-                    LogError("Could not start asynchronous image acquisition for caemra #1. Reason: " + exception.Message);
+                    LogError("Could not start asynchronous image acquisition for Camera #1. Reason: " + exception.Message);
                 }
             }
             else
@@ -438,11 +439,11 @@ namespace AsynchronousGrab
                         UpdateControls();
                     }
 
-                    LogMessage("Asynchronous image acquisition stopped.");
+                    LogMessage("Asynchronous image acquisition stopped for Camera #1.");
                 }
                 catch (Exception exception)
                 {
-                    LogError("Error while stopping asynchronous image acquisition. Reason: " + exception.Message);
+                    LogError("Error while stopping asynchronous image acquisition for Camera #1. Reason: " + exception.Message);
                 }
 
                 // Re-enable the camera list
@@ -477,7 +478,7 @@ namespace AsynchronousGrab
                 }
                 catch (Exception exception)
                 {
-                    LogError("Could not start asynchronous image acquisition for camera #2. Reason: " + exception.Message);
+                    LogError("Could not start asynchronous image acquisition for Camera #2. Reason: " + exception.Message);
                 }
             }
             else
@@ -495,11 +496,11 @@ namespace AsynchronousGrab
                         UpdateControls();
                     }
 
-                    LogMessage("Asynchronous image acquisition stopped for camera #2.");
+                    LogMessage("Asynchronous image acquisition stopped for Camera #2.");
                 }
                 catch (Exception exception)
                 {
-                    LogError("Error while stopping asynchronous image acquisition for camera #2. Reason: " + exception.Message);
+                    LogError("Error while stopping asynchronous image acquisition for Camera #2. Reason: " + exception.Message);
                 }
 
                 // Re-enable the camera list

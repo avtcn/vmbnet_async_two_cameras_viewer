@@ -742,10 +742,17 @@ namespace AsynchronousGrab
                 Image image = ConvertFrame(frame);
 
                 FrameReceivedHandler frameReceivedHandler = this.m_FrameReceivedHandler;
+
                 if (null != frameReceivedHandler && null != image)
                 {
+                    Console.WriteLine("OnFrameReceived(): " + frame.FrameID + ", image = " + image.Size
+                        + ", frameReceivedHandler = " + frameReceivedHandler);
                     // Report image to user
-                    frameReceivedHandler(this, new FrameEventArgs(image));
+                    frameReceivedHandler(this, new FrameEventArgs(image, frame.FrameID));
+                }
+                else
+                {
+                    Console.WriteLine("OnFrameReceived(): " + frame.FrameID + ", image not complete");
                 }
             }
             catch (Exception exception)
@@ -786,12 +793,15 @@ namespace AsynchronousGrab
                 Image image = ConvertFrame2(frame);
 
                 FrameReceivedHandler frameReceivedHandler = this.m_FrameReceivedHandler2;
-                Console.WriteLine("OnFrameReceived2(): " + frame.FrameID + ", image = " + image.Size 
-                    + ", frameReceivedHandler = " + frameReceivedHandler );
                 if (null != frameReceivedHandler && null != image)
                 {
+                    Console.WriteLine("OnFrameReceived2(): " + frame.FrameID + ", image = " + image.Size
+                        + ", frameReceivedHandler = " + frameReceivedHandler );
                     // Report image to user
-                    frameReceivedHandler(this, new FrameEventArgs(image));
+                    frameReceivedHandler(this, new FrameEventArgs(image, frame.FrameID));
+                }
+                else { 
+                    Console.WriteLine("OnFrameReceived2(): " + frame.FrameID + ", image not complete");
                 }
             }
             catch (Exception exception)

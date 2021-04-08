@@ -34,6 +34,7 @@ namespace AsynchronousGrab
         /// The Image (data)
         /// </summary>
         private Image m_Image = null;
+        private ulong m_FrmID = 0;
 
         /// <summary>
         /// The Exception (data)
@@ -44,7 +45,7 @@ namespace AsynchronousGrab
         /// Initializes a new instance of the FrameEventArgs class. 
         /// </summary>
         /// <param name="image">The Image to transfer</param>
-        public FrameEventArgs(Image image)
+        public FrameEventArgs(Image image, ulong id)
         {
             if (null == image)
             {
@@ -52,6 +53,7 @@ namespace AsynchronousGrab
             }
 
             m_Image = image;
+            m_FrmID = id;
         }
 
         /// <summary>
@@ -76,6 +78,13 @@ namespace AsynchronousGrab
             get
             {
                 return m_Image;
+            }
+        }
+        public ulong ID
+        {
+            get
+            {
+                return m_FrmID;
             }
         }
 

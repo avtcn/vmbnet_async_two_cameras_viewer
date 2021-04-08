@@ -589,6 +589,11 @@ namespace AsynchronousGrab
                 ImageInUse2 = false;
             }
 
+            if (image == null) 
+            {
+                Console.WriteLine("ConvertFrame2(): image == null.");
+            }
+
             return image;
         }
 
@@ -781,6 +786,8 @@ namespace AsynchronousGrab
                 Image image = ConvertFrame2(frame);
 
                 FrameReceivedHandler frameReceivedHandler = this.m_FrameReceivedHandler2;
+                Console.WriteLine("OnFrameReceived2(): " + frame.FrameID + ", image = " + image.Size 
+                    + ", frameReceivedHandler = " + frameReceivedHandler );
                 if (null != frameReceivedHandler && null != image)
                 {
                     // Report image to user

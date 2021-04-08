@@ -451,7 +451,7 @@ namespace AsynchronousGrab
         }
         private void AcquireButton2_Click(object sender, EventArgs e)
         {
-            if (false == m_Acquiring2) // index 1 for the 2nd button.
+            if (false == m_Acquiring2) // for the 2nd button.
             {
                 try
                 {
@@ -638,6 +638,20 @@ namespace AsynchronousGrab
 
         private void m_PictureBox2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void m_DisplayPanel_SizeChanged(object sender, EventArgs e)
+        {
+            Size szPanel = m_DisplayPanel.Size;
+
+            m_PictureBox.Width = szPanel.Width / 2;
+            m_PictureBox.Height = szPanel.Height;
+
+            m_PictureBox2.Location = new Point(szPanel.Width / 2 , 0);
+            m_PictureBox2.Width = szPanel.Width / 2;
+            m_PictureBox2.Height = szPanel.Height;
+
 
         }
     }

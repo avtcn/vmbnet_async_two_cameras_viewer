@@ -83,9 +83,11 @@ namespace AsynchronousGrab
             ((System.ComponentModel.ISupportInitialize)(this.m_PictureBox2)).BeginInit();
             this.m_LogTable.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -117,7 +119,7 @@ namespace AsynchronousGrab
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cameras:";
             // 
@@ -126,7 +128,8 @@ namespace AsynchronousGrab
             this.m_CameraList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_CameraList.FormattingEnabled = true;
             this.m_CameraList.IntegralHeight = false;
-            this.m_CameraList.Location = new System.Drawing.Point(0, 16);
+            this.m_CameraList.ItemHeight = 12;
+            this.m_CameraList.Location = new System.Drawing.Point(0, 15);
             this.m_CameraList.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.m_CameraList.Name = "m_CameraList";
             this.m_CameraList.Size = new System.Drawing.Size(198, 427);
@@ -139,10 +142,10 @@ namespace AsynchronousGrab
             this.m_AcquireButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.m_AcquireButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_AcquireButton.Enabled = false;
-            this.m_AcquireButton.Location = new System.Drawing.Point(5, 446);
+            this.m_AcquireButton.Location = new System.Drawing.Point(5, 445);
             this.m_AcquireButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 0);
             this.m_AcquireButton.Name = "m_AcquireButton";
-            this.m_AcquireButton.Size = new System.Drawing.Size(188, 23);
+            this.m_AcquireButton.Size = new System.Drawing.Size(188, 22);
             this.m_AcquireButton.TabIndex = 3;
             this.m_AcquireButton.Text = "Start image acquisition #1";
             this.m_AcquireButton.UseVisualStyleBackColor = true;
@@ -154,10 +157,10 @@ namespace AsynchronousGrab
             this.m_AcquireButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.m_AcquireButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_AcquireButton2.Enabled = false;
-            this.m_AcquireButton2.Location = new System.Drawing.Point(5, 472);
+            this.m_AcquireButton2.Location = new System.Drawing.Point(5, 470);
             this.m_AcquireButton2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 0);
             this.m_AcquireButton2.Name = "m_AcquireButton2";
-            this.m_AcquireButton2.Size = new System.Drawing.Size(188, 23);
+            this.m_AcquireButton2.Size = new System.Drawing.Size(188, 22);
             this.m_AcquireButton2.TabIndex = 3;
             this.m_AcquireButton2.Text = "Start image acquisition #2";
             this.m_AcquireButton2.UseVisualStyleBackColor = true;
@@ -171,7 +174,7 @@ namespace AsynchronousGrab
             this.m_SoftwareTriggerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.125F));
             this.m_SoftwareTriggerTable.Controls.Add(this.m_SoftwareTriggerCheckbox, 0, 0);
             this.m_SoftwareTriggerTable.Controls.Add(this.m_SoftwareTriggerButton, 1, 0);
-            this.m_SoftwareTriggerTable.Location = new System.Drawing.Point(3, 498);
+            this.m_SoftwareTriggerTable.Location = new System.Drawing.Point(3, 495);
             this.m_SoftwareTriggerTable.Name = "m_SoftwareTriggerTable";
             this.m_SoftwareTriggerTable.RowCount = 1;
             this.m_SoftwareTriggerTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -212,23 +215,27 @@ namespace AsynchronousGrab
             this.m_LogList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_LogList.FormattingEnabled = true;
             this.m_LogList.IntegralHeight = false;
-            this.m_LogList.Location = new System.Drawing.Point(0, 13);
+            this.m_LogList.ItemHeight = 12;
+            this.m_LogList.Location = new System.Drawing.Point(0, 12);
             this.m_LogList.Margin = new System.Windows.Forms.Padding(0);
             this.m_LogList.Name = "m_LogList";
-            this.m_LogList.Size = new System.Drawing.Size(934, 126);
+            this.m_LogList.Size = new System.Drawing.Size(934, 133);
             this.m_LogList.TabIndex = 1;
             // 
             // m_PictureBox
             // 
-            this.m_PictureBox.BackColor = System.Drawing.SystemColors.Info;
+            this.m_PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_PictureBox.BackColor = System.Drawing.Color.SeaGreen;
             this.m_PictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("m_PictureBox.BackgroundImage")));
             this.m_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.m_PictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_PictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("m_PictureBox.InitialImage")));
             this.m_PictureBox.Location = new System.Drawing.Point(0, 0);
             this.m_PictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.m_PictureBox.Name = "m_PictureBox";
-            this.m_PictureBox.Size = new System.Drawing.Size(363, 514);
+            this.m_PictureBox.Size = new System.Drawing.Size(363, 534);
             this.m_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.m_PictureBox.TabIndex = 2;
             this.m_PictureBox.TabStop = false;
@@ -237,20 +244,23 @@ namespace AsynchronousGrab
             // 
             // m_PictureBox2
             // 
+            this.m_PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.m_PictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.m_PictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("m_PictureBox2.BackgroundImage")));
             this.m_PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.m_PictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_PictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("m_PictureBox2.InitialImage")));
             this.m_PictureBox2.Location = new System.Drawing.Point(363, 0);
             this.m_PictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.m_PictureBox2.Name = "m_PictureBox2";
-            this.m_PictureBox2.Size = new System.Drawing.Size(363, 514);
+            this.m_PictureBox2.Size = new System.Drawing.Size(363, 534);
             this.m_PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.m_PictureBox2.TabIndex = 2;
             this.m_PictureBox2.TabStop = false;
             this.m_PictureBox2.Click += new System.EventHandler(this.m_PictureBox2_Click);
-            this.m_PictureBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox_Paint);
+            this.m_PictureBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox2_Paint);
             this.m_PictureBox2.DoubleClick += new System.EventHandler(this.PictureBox_DoubleClick);
             // 
             // m_LogTable
@@ -265,7 +275,7 @@ namespace AsynchronousGrab
             this.m_LogTable.RowCount = 2;
             this.m_LogTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.m_LogTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.m_LogTable.Size = new System.Drawing.Size(934, 139);
+            this.m_LogTable.Size = new System.Drawing.Size(934, 145);
             this.m_LogTable.TabIndex = 4;
             // 
             // label2
@@ -273,16 +283,16 @@ namespace AsynchronousGrab
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(83, 12);
             this.label2.TabIndex = 2;
             this.label2.Text = "Log messages:";
             // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Location = new System.Drawing.Point(3, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(928, 27);
+            this.label3.Size = new System.Drawing.Size(928, 0);
             this.label3.TabIndex = 5;
             this.label3.Text = "Programming example to demonstrate how to acquire images asynchronously (grab) wi" +
     "th VimbaNET.";
@@ -290,11 +300,12 @@ namespace AsynchronousGrab
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(3, 664);
+            this.groupBox1.Location = new System.Drawing.Point(3, 690);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(934, 46);
+            this.groupBox1.Size = new System.Drawing.Size(934, 20);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Description";
@@ -315,8 +326,8 @@ namespace AsynchronousGrab
             // 
             this.splitContainer1.Panel2.Controls.Add(this.m_LogTable);
             this.splitContainer1.Panel2MinSize = 50;
-            this.splitContainer1.Size = new System.Drawing.Size(934, 661);
-            this.splitContainer1.SplitterDistance = 518;
+            this.splitContainer1.Size = new System.Drawing.Size(934, 687);
+            this.splitContainer1.SplitterDistance = 538;
             this.splitContainer1.TabIndex = 8;
             // 
             // splitContainer2
@@ -334,7 +345,7 @@ namespace AsynchronousGrab
             // 
             this.splitContainer2.Panel2.Controls.Add(this.m_DisplayPanel);
             this.splitContainer2.Panel2MinSize = 100;
-            this.splitContainer2.Size = new System.Drawing.Size(934, 518);
+            this.splitContainer2.Size = new System.Drawing.Size(934, 538);
             this.splitContainer2.SplitterDistance = 200;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -347,8 +358,9 @@ namespace AsynchronousGrab
             this.m_DisplayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_DisplayPanel.Location = new System.Drawing.Point(0, 0);
             this.m_DisplayPanel.Name = "m_DisplayPanel";
-            this.m_DisplayPanel.Size = new System.Drawing.Size(730, 518);
+            this.m_DisplayPanel.Size = new System.Drawing.Size(730, 538);
             this.m_DisplayPanel.TabIndex = 3;
+            this.m_DisplayPanel.SizeChanged += new System.EventHandler(this.m_DisplayPanel_SizeChanged);
             this.m_DisplayPanel.DoubleClick += new System.EventHandler(this.DisplayPanel_DoubleClick);
             // 
             // MainForm
@@ -373,12 +385,15 @@ namespace AsynchronousGrab
             this.groupBox1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.m_DisplayPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -187,6 +187,7 @@ namespace AsynchronousGrab
                     LogMessage("Camera #1 new frame received, frame id = " + args.ID + ", but image is null");
                     LogMessage("An acquisition error occurred. Reason: " + args.Exception.Message);
 
+#if 0
                     try
                     {
                         try
@@ -207,6 +208,7 @@ namespace AsynchronousGrab
                     {
                         LogError("Error while stopping asynchronous image acquisition. Reason: " + exception.Message);
                     }
+#endif
                 }
             }
         }
@@ -236,6 +238,7 @@ namespace AsynchronousGrab
                     LogMessage("Camera #2 new frame received, frame id = " + args.ID + ", but image is null");
                     LogMessage("OnFrameReceived2(): An acquisition error occurred for camera #2. Reason: " + args.Exception.Message);
 
+#if 0
                     try
                     {
                         try
@@ -256,6 +259,8 @@ namespace AsynchronousGrab
                     {
                         LogError("OnFrameReceived2() Error while stopping asynchronous image acquisition. Reason: " + exception.Message);
                     }
+#endif 
+
                 }
             }
         }

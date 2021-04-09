@@ -752,7 +752,7 @@ namespace AsynchronousGrab
                 }
                 else
                 {
-                    Console.WriteLine("OnFrameReceived(): " + frame.FrameID + ", image not complete");
+                    Console.WriteLine("OnFrameReceived(): " + frame.FrameID + ", image is null!");
                 }
             }
             catch (Exception exception)
@@ -801,7 +801,7 @@ namespace AsynchronousGrab
                     frameReceivedHandler(this, new FrameEventArgs(image, frame.FrameID));
                 }
                 else { 
-                    Console.WriteLine("OnFrameReceived2(): " + frame.FrameID + ", image not complete");
+                    Console.WriteLine("OnFrameReceived2(): " + frame.FrameID + ", image is null!");
                 }
             }
             catch (Exception exception)

@@ -187,28 +187,29 @@ namespace AsynchronousGrab
                     LogMessage("Camera #1 new frame received, frame id = " + args.ID + ", but image is null");
                     LogMessage("An acquisition error occurred. Reason: " + args.Exception.Message);
 
-#if 0
-                    try
+                    if (false)
                     {
                         try
                         {
-                            // Start asynchronous image acquisition (grab) in selected camera
-                            m_VimbaHelper.StopContinuousImageAcquisition();
-                        }
-                        finally
-                        {
-                            m_Acquiring = false;
-                            UpdateControls();
-                            m_CameraList.Enabled = true;
-                        }
+                            try
+                            {
+                                // Start asynchronous image acquisition (grab) in selected camera
+                                m_VimbaHelper.StopContinuousImageAcquisition();
+                            }
+                            finally
+                            {
+                                m_Acquiring = false;
+                                UpdateControls();
+                                m_CameraList.Enabled = true;
+                            }
 
-                        LogMessage("Asynchronous image acquisition stopped.");
+                            LogMessage("Asynchronous image acquisition stopped.");
+                        }
+                        catch (Exception exception)
+                        {
+                            LogError("Error while stopping asynchronous image acquisition. Reason: " + exception.Message);
+                        }
                     }
-                    catch (Exception exception)
-                    {
-                        LogError("Error while stopping asynchronous image acquisition. Reason: " + exception.Message);
-                    }
-#endif
                 }
             }
         }
@@ -238,28 +239,29 @@ namespace AsynchronousGrab
                     LogMessage("Camera #2 new frame received, frame id = " + args.ID + ", but image is null");
                     LogMessage("OnFrameReceived2(): An acquisition error occurred for camera #2. Reason: " + args.Exception.Message);
 
-#if 0
-                    try
+                    if (false)
                     {
                         try
                         {
-                            // Start asynchronous image acquisition (grab) in selected camera
-                            m_VimbaHelper.StopContinuousImageAcquisition2();
-                        }
-                        finally
-                        {
-                            m_Acquiring2 = false;
-                            UpdateControls();
-                            m_CameraList.Enabled = true;
-                        }
+                            try
+                            {
+                                // Start asynchronous image acquisition (grab) in selected camera
+                                m_VimbaHelper.StopContinuousImageAcquisition2();
+                            }
+                            finally
+                            {
+                                m_Acquiring2 = false;
+                                UpdateControls();
+                                m_CameraList.Enabled = true;
+                            }
 
-                        LogMessage("OnFrameReceived2() Asynchronous image acquisition stopped for camera #2.");
+                            LogMessage("OnFrameReceived2() Asynchronous image acquisition stopped for camera #2.");
+                        }
+                        catch (Exception exception)
+                        {
+                            LogError("OnFrameReceived2() Error while stopping asynchronous image acquisition. Reason: " + exception.Message);
+                        }
                     }
-                    catch (Exception exception)
-                    {
-                        LogError("OnFrameReceived2() Error while stopping asynchronous image acquisition. Reason: " + exception.Message);
-                    }
-#endif 
 
                 }
             }

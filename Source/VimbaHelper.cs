@@ -542,7 +542,8 @@ namespace AsynchronousGrab
             // Check if the image is valid
             if (VmbFrameStatusType.VmbFrameStatusComplete != frame.ReceiveStatus)
             {
-                throw new Exception("Invalid frame received. Reason: " + frame.ReceiveStatus.ToString());
+                Console.Error.WriteLine("Incomplete frame received for camera #1. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
+                throw new Exception("Incomplete frame received for camera #1. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
             }
 
             // define return variable
@@ -558,6 +559,10 @@ namespace AsynchronousGrab
                 image = m_RingBitmap.Image;
                 ImageInUse = false;
             }
+            else 
+            {
+                Console.Error.WriteLine("ConvertFrame1(): image == null. because ImageInUse2 = " + ImageInUse2);
+            }
 
             return image;
         }
@@ -572,7 +577,8 @@ namespace AsynchronousGrab
             // Check if the image is valid
             if (VmbFrameStatusType.VmbFrameStatusComplete != frame.ReceiveStatus)
             {
-                throw new Exception("Invalid frame received for camera #2. Reason: " + frame.ReceiveStatus.ToString());
+                Console.Error.WriteLine("Incomplete frame received for camera #2. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
+                throw new Exception("Incomplete frame received for camera #2. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
             }
 
             // define return variable
@@ -588,10 +594,9 @@ namespace AsynchronousGrab
                 image = m_RingBitmap2.Image;
                 ImageInUse2 = false;
             }
-
-            if (image == null) 
+            else 
             {
-                Console.WriteLine("ConvertFrame2(): image == null.");
+                Console.Error.WriteLine("ConvertFrame2(): image == null. because ImageInUse2 = " + ImageInUse2);
             }
 
             return image;
@@ -761,7 +766,7 @@ namespace AsynchronousGrab
                 if (null != frameReceivedHandler)
                 {
                     // Report an error to the user
-                    frameReceivedHandler(this, new FrameEventArgs(exception));
+                    frameReceivedHandler(this, new FrameEventArgs(exception, frame!=null?frame.FrameID:0));
                 }
             }
             finally
@@ -810,7 +815,7 @@ namespace AsynchronousGrab
                 if (null != frameReceivedHandler)
                 {
                     // Report an error to the user
-                    frameReceivedHandler(this, new FrameEventArgs(exception));
+                    frameReceivedHandler(this, new FrameEventArgs(exception, frame!=null?frame.FrameID:0));
                 }
             }
             finally

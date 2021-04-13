@@ -68,6 +68,17 @@ namespace AsynchronousGrab
             }
 
             m_Exception = exception;
+            m_FrmID = 0;
+        }
+        public FrameEventArgs(Exception exception, ulong id)
+        {
+            if (null == exception)
+            {
+                throw new ArgumentNullException("exception");
+            }
+
+            m_Exception = exception;
+            m_FrmID = id;
         }
 
         /// <summary>

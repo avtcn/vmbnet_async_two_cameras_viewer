@@ -522,12 +522,12 @@ namespace AsynchronousGrab
             if (PictureBoxSizeMode.Zoom == m_PictureBox.SizeMode)
             {
                 m_PictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-                m_PictureBox.Dock = DockStyle.None;
+                //m_PictureBox.Dock = DockStyle.None;
             }
             else
             {
                 m_PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                m_PictureBox.Dock = DockStyle.Fill;
+                //m_PictureBox.Dock = DockStyle.Fill;
             }
         }
 
@@ -552,12 +552,12 @@ namespace AsynchronousGrab
         /// <param name="e">The EventArgs (not used)</param>
         private void PictureBox_DoubleClick(object sender, EventArgs e)
         {
-            ToogleDisplayMode();
+            //ToogleDisplayMode();
         }
 
         private void PictureBox2_DoubleClick(object sender, EventArgs e)
         {
-            ToogleDisplayMode2();
+            //ToogleDisplayMode2();
         }
 
         /// <summary>
@@ -567,7 +567,7 @@ namespace AsynchronousGrab
         /// <param name="e">The EventArgs (not used)</param>
         private void DisplayPanel_DoubleClick(object sender, EventArgs e)
         {
-            ToogleDisplayMode();
+            //ToogleDisplayMode();
         }
 
 
@@ -660,6 +660,11 @@ namespace AsynchronousGrab
             m_PictureBox2.Width = szPanel.Width / 2;
             m_PictureBox2.Height = szPanel.Height;
 
+
+        }
+
+        private void MainForm_ClientSizeChanged(object sender, EventArgs e)
+        {
 
         }
     }

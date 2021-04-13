@@ -235,7 +235,7 @@ namespace AsynchronousGrab
             this.m_PictureBox.Location = new System.Drawing.Point(0, 0);
             this.m_PictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.m_PictureBox.Name = "m_PictureBox";
-            this.m_PictureBox.Size = new System.Drawing.Size(363, 534);
+            this.m_PictureBox.Size = new System.Drawing.Size(360, 534);
             this.m_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.m_PictureBox.TabIndex = 2;
             this.m_PictureBox.TabStop = false;
@@ -255,7 +255,7 @@ namespace AsynchronousGrab
             this.m_PictureBox2.Location = new System.Drawing.Point(363, 0);
             this.m_PictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.m_PictureBox2.Name = "m_PictureBox2";
-            this.m_PictureBox2.Size = new System.Drawing.Size(363, 534);
+            this.m_PictureBox2.Size = new System.Drawing.Size(360, 534);
             this.m_PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.m_PictureBox2.TabIndex = 2;
             this.m_PictureBox2.TabStop = false;
@@ -346,7 +346,7 @@ namespace AsynchronousGrab
             this.splitContainer2.Panel2.Controls.Add(this.m_DisplayPanel);
             this.splitContainer2.Panel2MinSize = 100;
             this.splitContainer2.Size = new System.Drawing.Size(934, 538);
-            this.splitContainer2.SplitterDistance = 200;
+            this.splitContainer2.SplitterDistance = 203;
             this.splitContainer2.TabIndex = 0;
             // 
             // m_DisplayPanel
@@ -358,7 +358,7 @@ namespace AsynchronousGrab
             this.m_DisplayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_DisplayPanel.Location = new System.Drawing.Point(0, 0);
             this.m_DisplayPanel.Name = "m_DisplayPanel";
-            this.m_DisplayPanel.Size = new System.Drawing.Size(730, 538);
+            this.m_DisplayPanel.Size = new System.Drawing.Size(727, 538);
             this.m_DisplayPanel.TabIndex = 3;
             this.m_DisplayPanel.SizeChanged += new System.EventHandler(this.m_DisplayPanel_SizeChanged);
             this.m_DisplayPanel.DoubleClick += new System.EventHandler(this.DisplayPanel_DoubleClick);
@@ -374,6 +374,7 @@ namespace AsynchronousGrab
             this.Text = "VimbaNET Asynchronous Grab Example for 2 cameras";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.ClientSizeChanged += new System.EventHandler(this.MainForm_ClientSizeChanged);
             this.m_CameraListTable.ResumeLayout(false);
             this.m_CameraListTable.PerformLayout();
             this.m_SoftwareTriggerTable.ResumeLayout(false);

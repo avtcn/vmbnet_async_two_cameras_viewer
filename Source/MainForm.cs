@@ -31,6 +31,7 @@ namespace AsynchronousGrab
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.IO;
     using System.Windows.Forms;
 
     /// <summary>
@@ -56,6 +57,14 @@ namespace AsynchronousGrab
         {
             InitializeComponent();
 
+            const bool bEnableFileOutput = true;
+            if (bEnableFileOutput) {
+                // https://www.coder.work/article/2963762
+                var fs = new FileStream("debug-output.txt", FileMode.Create);
+                var sw = new StreamWriter(fs);
+                Console.SetOut(sw);
+                Console.SetError(sw);
+            }
         }
 
         /// <summary>

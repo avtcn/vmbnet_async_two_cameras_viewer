@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsynchronousGrabForms2", "AsynchronousGrabForms2.csproj", "{1FB459E7-7C5D-45C3-BF6E-428C9CD191BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsynchronousGrabForms2Cameras", "AsynchronousGrabForms2Cameras.csproj", "{1FB459E7-7C5D-45C3-BF6E-428C9CD191BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -78,6 +78,14 @@ namespace AsynchronousGrab
                 throw new ArgumentNullException("message");
             }
 
+            // Count = 1669429, maximum value for items in listbox
+            if (m_LogList.Items.Count > 10 * 1000)
+            {
+                // Remove first 100 items
+                for (int i = 0; i < 100; i++)
+                    m_LogList.Items.RemoveAt(0);
+            }
+
             int index = m_LogList.Items.Add(string.Format("{0:yyyy-MM-dd HH:mm:ss.fff}: {1}", DateTime.Now, message));
             m_LogList.TopIndex = index;
         }

@@ -546,6 +546,8 @@ namespace AsynchronousGrab
                 throw new Exception("Incomplete frame received for camera #1. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
             }
 
+            Console.WriteLine("Camera #1 new frame received, frame id = " + frame.FrameID);
+
             // define return variable
             Image image = null;
 
@@ -580,6 +582,8 @@ namespace AsynchronousGrab
                 Console.Error.WriteLine("Incomplete frame received for camera #2. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
                 throw new Exception("Incomplete frame received for camera #2. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
             }
+
+            Console.WriteLine("Camera #2 new frame received, frame id = " + frame.FrameID);
 
             // define return variable
             Image image = null;

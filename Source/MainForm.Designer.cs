@@ -77,6 +77,8 @@ namespace AsynchronousGrab
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.m_DisplayPanel = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.m_labelFrameID1 = new System.Windows.Forms.Label();
+            this.m_labelFrameID2 = new System.Windows.Forms.Label();
             this.m_CameraListTable.SuspendLayout();
             this.m_SoftwareTriggerTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_PictureBox)).BeginInit();
@@ -235,7 +237,7 @@ namespace AsynchronousGrab
             this.m_PictureBox.Location = new System.Drawing.Point(0, 0);
             this.m_PictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.m_PictureBox.Name = "m_PictureBox";
-            this.m_PictureBox.Size = new System.Drawing.Size(360, 534);
+            this.m_PictureBox.Size = new System.Drawing.Size(363, 534);
             this.m_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.m_PictureBox.TabIndex = 2;
             this.m_PictureBox.TabStop = false;
@@ -346,22 +348,43 @@ namespace AsynchronousGrab
             this.splitContainer2.Panel2.Controls.Add(this.m_DisplayPanel);
             this.splitContainer2.Panel2MinSize = 100;
             this.splitContainer2.Size = new System.Drawing.Size(934, 538);
-            this.splitContainer2.SplitterDistance = 203;
+            this.splitContainer2.SplitterDistance = 202;
             this.splitContainer2.TabIndex = 0;
             // 
             // m_DisplayPanel
             // 
             this.m_DisplayPanel.AutoScroll = true;
             this.m_DisplayPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.m_DisplayPanel.Controls.Add(this.m_labelFrameID2);
+            this.m_DisplayPanel.Controls.Add(this.m_labelFrameID1);
             this.m_DisplayPanel.Controls.Add(this.m_PictureBox);
             this.m_DisplayPanel.Controls.Add(this.m_PictureBox2);
             this.m_DisplayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_DisplayPanel.Location = new System.Drawing.Point(0, 0);
             this.m_DisplayPanel.Name = "m_DisplayPanel";
-            this.m_DisplayPanel.Size = new System.Drawing.Size(727, 538);
+            this.m_DisplayPanel.Size = new System.Drawing.Size(728, 538);
             this.m_DisplayPanel.TabIndex = 3;
             this.m_DisplayPanel.SizeChanged += new System.EventHandler(this.m_DisplayPanel_SizeChanged);
             this.m_DisplayPanel.DoubleClick += new System.EventHandler(this.DisplayPanel_DoubleClick);
+            // 
+            // m_labelFrameID1
+            // 
+            this.m_labelFrameID1.AutoSize = true;
+            this.m_labelFrameID1.Location = new System.Drawing.Point(12, 510);
+            this.m_labelFrameID1.Name = "m_labelFrameID1";
+            this.m_labelFrameID1.Size = new System.Drawing.Size(107, 12);
+            this.m_labelFrameID1.TabIndex = 3;
+            this.m_labelFrameID1.Text = "Frame ID 1 000000000000";
+            this.m_labelFrameID1.Click += new System.EventHandler(this.m_labelFrameID1_Click);
+            // 
+            // m_labelFrameID2
+            // 
+            this.m_labelFrameID2.AutoSize = true;
+            this.m_labelFrameID2.Location = new System.Drawing.Point(386, 510);
+            this.m_labelFrameID2.Name = "m_labelFrameID2";
+            this.m_labelFrameID2.Size = new System.Drawing.Size(107, 12);
+            this.m_labelFrameID2.TabIndex = 4;
+            this.m_labelFrameID2.Text = "Frame ID 2 000000000000";
             // 
             // MainForm
             // 
@@ -393,6 +416,7 @@ namespace AsynchronousGrab
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.m_DisplayPanel.ResumeLayout(false);
+            this.m_DisplayPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,6 +443,8 @@ namespace AsynchronousGrab
         private System.Windows.Forms.CheckBox m_SoftwareTriggerCheckbox;
         private System.Windows.Forms.Button m_SoftwareTriggerButton;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label m_labelFrameID1;
+        private System.Windows.Forms.Label m_labelFrameID2;
     }
 }
 

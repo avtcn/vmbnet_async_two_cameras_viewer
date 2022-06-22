@@ -563,7 +563,7 @@ namespace AsynchronousGrab
             }
             else 
             {
-                Console.Error.WriteLine("ConvertFrame1(): image == null. because ImageInUse2 = " + ImageInUse2);
+                Console.Error.WriteLine("ConvertFrame1(): skip image update because the previous has not been drawn! frame id = " + frame.FrameID);
             }
 
             return image;
@@ -600,7 +600,7 @@ namespace AsynchronousGrab
             }
             else 
             {
-                Console.Error.WriteLine("ConvertFrame2(): image == null. because ImageInUse2 = " + ImageInUse2);
+                Console.Error.WriteLine("ConvertFrame2(): skip image update because the previous has not been drawn! frame id = " + frame.FrameID);
             }
 
             return image;

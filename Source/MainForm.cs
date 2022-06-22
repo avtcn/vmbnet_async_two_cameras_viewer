@@ -197,6 +197,7 @@ namespace AsynchronousGrab
                 if (null != image)
                 {
                     LogMessage("Camera #1 new frame received, frame id = " + args.ID);
+                    m_labelFrameID1.Text = "Cam1 FrameID: " + args.ID;
                     m_PictureBox.Image = image;
                 }
                 else
@@ -248,8 +249,8 @@ namespace AsynchronousGrab
                 Image image = args.Image;
                 if (null != image)
                 {
-                    m_PictureBox2.Image = image;
-
+                    m_labelFrameID2.Text = "Cam2 FrameID: " + args.ID;
+                    m_PictureBox2.Image = image; 
                 }
                 else
                 {
@@ -673,14 +674,23 @@ namespace AsynchronousGrab
             m_PictureBox.Width = szPanel.Width / 2;
             m_PictureBox.Height = szPanel.Height;
 
+            m_labelFrameID1.Location = new Point(20, m_PictureBox.Height - 20);
+
+
             m_PictureBox2.Location = new Point(szPanel.Width / 2 , 0);
             m_PictureBox2.Width = szPanel.Width / 2;
             m_PictureBox2.Height = szPanel.Height;
 
+            m_labelFrameID2.Location = new Point(szPanel.Width / 2 + 20, m_PictureBox.Height - 20);
 
         }
 
         private void MainForm_ClientSizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_labelFrameID1_Click(object sender, EventArgs e)
         {
 
         }

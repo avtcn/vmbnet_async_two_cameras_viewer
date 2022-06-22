@@ -11,3 +11,13 @@ Vimba .NET C# sample for two cameras based on \VimbaNET_Examples\AsynchronousGra
 * 测试时长：12小时以上
 
 ![](Screenshot.png) 
+![](Screenshot2.gif) 
+
+
+
+
+
+## 测试
+2022年6月22日20:26:36 Vimba 6.0，U158，U2050测试通过 。
+
+

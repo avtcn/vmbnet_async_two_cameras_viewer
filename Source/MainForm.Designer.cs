@@ -76,9 +76,9 @@ namespace AsynchronousGrab
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.m_DisplayPanel = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.m_labelFrameID1 = new System.Windows.Forms.Label();
             this.m_labelFrameID2 = new System.Windows.Forms.Label();
+            this.m_labelFrameID1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.m_CameraListTable.SuspendLayout();
             this.m_SoftwareTriggerTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_PictureBox)).BeginInit();
@@ -367,24 +367,24 @@ namespace AsynchronousGrab
             this.m_DisplayPanel.SizeChanged += new System.EventHandler(this.m_DisplayPanel_SizeChanged);
             this.m_DisplayPanel.DoubleClick += new System.EventHandler(this.DisplayPanel_DoubleClick);
             // 
-            // m_labelFrameID1
-            // 
-            this.m_labelFrameID1.AutoSize = true;
-            this.m_labelFrameID1.Location = new System.Drawing.Point(12, 510);
-            this.m_labelFrameID1.Name = "m_labelFrameID1";
-            this.m_labelFrameID1.Size = new System.Drawing.Size(107, 12);
-            this.m_labelFrameID1.TabIndex = 3;
-            this.m_labelFrameID1.Text = "Frame ID 1 000000000000";
-            this.m_labelFrameID1.Click += new System.EventHandler(this.m_labelFrameID1_Click);
-            // 
             // m_labelFrameID2
             // 
             this.m_labelFrameID2.AutoSize = true;
             this.m_labelFrameID2.Location = new System.Drawing.Point(386, 510);
             this.m_labelFrameID2.Name = "m_labelFrameID2";
-            this.m_labelFrameID2.Size = new System.Drawing.Size(107, 12);
+            this.m_labelFrameID2.Size = new System.Drawing.Size(59, 12);
             this.m_labelFrameID2.TabIndex = 4;
-            this.m_labelFrameID2.Text = "Frame ID 2 000000000000";
+            this.m_labelFrameID2.Text = "Camera #2";
+            // 
+            // m_labelFrameID1
+            // 
+            this.m_labelFrameID1.AutoSize = true;
+            this.m_labelFrameID1.Location = new System.Drawing.Point(12, 510);
+            this.m_labelFrameID1.Name = "m_labelFrameID1";
+            this.m_labelFrameID1.Size = new System.Drawing.Size(59, 12);
+            this.m_labelFrameID1.TabIndex = 3;
+            this.m_labelFrameID1.Text = "Camera #1";
+            this.m_labelFrameID1.Click += new System.EventHandler(this.m_labelFrameID1_Click);
             // 
             // MainForm
             // 

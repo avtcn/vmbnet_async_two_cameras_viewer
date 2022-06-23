@@ -175,6 +175,7 @@ namespace AsynchronousGrab
             }
         }
 
+
         /// <summary>
         /// Handles the FrameReceived event
         /// </summary>
@@ -197,7 +198,10 @@ namespace AsynchronousGrab
                 if (null != image)
                 {
                     LogMessage("Camera #1 new frame received, frame id = " + args.ID);
-                    m_labelFrameID1.Text = "Camera #1 FrameID: " + args.ID;
+                    //BUG: thread conflict
+                    //https://stackoverflow.com/a/2172484
+                    m_labelFrameID1.Invoke((MethodInvoker)(() => m_labelFrameID1.Text = "Camera #1 FrameID: " + args.ID));
+
                     m_PictureBox.Image = image;
                 }
                 else
@@ -249,7 +253,10 @@ namespace AsynchronousGrab
                 Image image = args.Image;
                 if (null != image)
                 {
-                    m_labelFrameID2.Text = "Camera #2 FrameID: " + args.ID;
+                    //BUG: thread conflict
+                    // https://stackoverflow.com/a/2172484
+                    m_labelFrameID2.Invoke((MethodInvoker)(() => m_labelFrameID2.Text = "Camera #2 FrameID: " + args.ID));
+
                     m_PictureBox2.Image = image; 
                 }
                 else

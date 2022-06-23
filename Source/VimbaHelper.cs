@@ -281,6 +281,10 @@ namespace AsynchronousGrab
                 {
                     throw new NullReferenceException("No camera retrieved.");
                 }
+
+                // Try lower usb3 bandwidth
+                if (this.m_Camera.Features["StreamType"].StringValue == "USB3")
+                    this.m_Camera.Features["DeviceLinkThroughputLimit"].IntValue = 120000000;
             }
 
             // Determine if a suitable trigger can be found
@@ -336,24 +340,28 @@ namespace AsynchronousGrab
                 {
                     throw new NullReferenceException("No camera #2 retrieved.");
                 }
+
+                // Try lower usb3 bandwidth
+                this.m_Camera2.Features["DeviceLinkThroughputLimit"].IntValue = 100000000;
             }
 
-/*
-            // Set the GeV packet size to the highest possible value
-            // (In this example we do not test whether this cam actually is a GigE cam)
-            try
-            {
-                this.m_Camera2.Features["GVSPAdjustPacketSize"].RunCommand();
-                while (false == this.m_Camera2.Features["GVSPAdjustPacketSize"].IsCommandDone())
-                {
-                    // Do Nothing
-                }
-            }
-            catch
-            {
-                // Do Nothing
-            }
-*/        }
+            /*
+                        // Set the GeV packet size to the highest possible value
+                        // (In this example we do not test whether this cam actually is a GigE cam)
+                        try
+                        {
+                            this.m_Camera2.Features["GVSPAdjustPacketSize"].RunCommand();
+                            while (false == this.m_Camera2.Features["GVSPAdjustPacketSize"].IsCommandDone())
+                            {
+                                // Do Nothing
+                            }
+                        }
+                        catch
+                        {
+                            // Do Nothing
+                        }
+            */
+        }
 
         // Closes the currently opened camera if it was opened
         public void CloseCamera()

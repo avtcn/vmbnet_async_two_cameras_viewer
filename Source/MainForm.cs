@@ -81,8 +81,8 @@ namespace AsynchronousGrab
             // Count = 1669429, maximum value for items in listbox
             if (m_LogList.Items.Count > 10 * 1000)
             {
-                // Remove first 100 items
-                for (int i = 0; i < 100; i++)
+                // Remove first 200 items
+                for (int i = 0; i < 200; i++)
                     m_LogList.Items.RemoveAt(0);
             }
 
@@ -200,7 +200,7 @@ namespace AsynchronousGrab
                     LogMessage("Camera #1 new frame received, frame id = " + args.ID);
                     //BUG: thread conflict
                     //https://stackoverflow.com/a/2172484
-                    //m_labelFrameID1.Invoke((MethodInvoker)(() => m_labelFrameID1.Text = "Camera #1 FrameID: " + args.ID));
+                    m_labelFrameID1.Invoke((MethodInvoker)(() => m_labelFrameID1.Text = "Camera #1 FrameID: " + args.ID));
 
                     m_PictureBox.Image = image;
                 }
@@ -247,15 +247,16 @@ namespace AsynchronousGrab
 
             if (true == m_Acquiring2) // 1 means camera #2
             {
-                LogMessage("Camera #2 new frame received, frame id = " + args.ID);
 
                 // Display image
                 Image image = args.Image;
                 if (null != image)
                 {
+                    LogMessage("Camera #2 new frame received, frame id = " + args.ID);
+
                     //BUG: thread conflict
                     // https://stackoverflow.com/a/2172484
-                    //m_labelFrameID2.Invoke((MethodInvoker)(() => m_labelFrameID2.Text = "Camera #2 FrameID: " + args.ID));
+                    m_labelFrameID2.Invoke((MethodInvoker)(() => m_labelFrameID2.Text = "Camera #2 FrameID: " + args.ID));
 
                     m_PictureBox2.Image = image; 
                 }

@@ -544,17 +544,17 @@ namespace AsynchronousGrab
         {
             if (null == frame)
             {
-                throw new ArgumentNullException("frame");
+                throw new ArgumentNullException("frame of camera1 is null");
             }
 
             // Check if the image is valid
             if (VmbFrameStatusType.VmbFrameStatusComplete != frame.ReceiveStatus)
             {
-                Console.Error.WriteLine("Incomplete frame received for camera #1. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
+                //Console.WriteLine("Incomplete frame received for camera #1. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
                 throw new Exception("Incomplete frame received for camera #1. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
             }
 
-            Console.WriteLine("Camera #1 new frame received, frame id = " + frame.FrameID);
+            //Console.WriteLine("Camera #1 new frame received, frame id = " + frame.FrameID);
 
             // define return variable
             Image image = null;
@@ -571,7 +571,7 @@ namespace AsynchronousGrab
             }
             else 
             {
-                Console.Error.WriteLine("ConvertFrame1(): skip image update because the previous has not been drawn! frame id = " + frame.FrameID);
+                //Console.WriteLine("ConvertFrame1(): skip image update because the previous has not been drawn! frame id = " + frame.FrameID);
             }
 
             return image;
@@ -581,17 +581,17 @@ namespace AsynchronousGrab
         {
             if (null == frame)
             {
-                throw new ArgumentNullException("frame #2");
+                throw new ArgumentNullException("frame of camera2 is null!");
             }
 
             // Check if the image is valid
             if (VmbFrameStatusType.VmbFrameStatusComplete != frame.ReceiveStatus)
             {
-                Console.Error.WriteLine("Incomplete frame received for camera #2. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
+                //Console.WriteLine("Incomplete frame received for camera #2. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
                 throw new Exception("Incomplete frame received for camera #2. id = " + frame.FrameID + " Reason: " + frame.ReceiveStatus.ToString());
             }
 
-            Console.WriteLine("Camera #2 new frame received, frame id = " + frame.FrameID);
+            //Console.WriteLine("Camera #2 new frame received, frame id = " + frame.FrameID);
 
             // define return variable
             Image image = null;
@@ -608,7 +608,7 @@ namespace AsynchronousGrab
             }
             else 
             {
-                Console.Error.WriteLine("ConvertFrame2(): skip image update because the previous has not been drawn! frame id = " + frame.FrameID);
+                //Console.WriteLine("ConvertFrame2(): skip image update because the previous has not been drawn! frame id = " + frame.FrameID);
             }
 
             return image;

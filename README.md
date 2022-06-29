@@ -6,6 +6,12 @@ Vimba .NET C# sample for two cameras based on \VimbaNET_Examples\AsynchronousGra
 
 ## Screenshot
 ### 测试环境
+1. 2022年6月29日08:16:24 @ Vimba 6.0
+* 一台 Alvium 1800 U-1240c
+* 一台 Alvium 1800 U-2050m
+* 测试时长：24小时以上
+
+2. 测试0 
 * 一台 Alvium 1800 U-1240c
 * 一台 Manta G895B
 * 测试时长：12小时以上

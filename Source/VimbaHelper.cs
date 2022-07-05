@@ -288,6 +288,7 @@ namespace AsynchronousGrab
             }
 
             // Determine if a suitable trigger can be found
+            /*
             m_IsTriggerAvailable = false;
             if (this.m_Camera.Features.ContainsName("TriggerSoftware") && this.m_Camera.Features["TriggerSoftware"].IsWritable())
             {
@@ -301,20 +302,24 @@ namespace AsynchronousGrab
                     }
                 }
             }
+            */
 
             // Set the GeV packet size to the highest possible value
             // (In this example we do not test whether this cam actually is a GigE cam)
-            try
+            if (this.m_Camera.Features["StreamType"].StringValue == "GEV")
             {
-                this.m_Camera.Features["GVSPAdjustPacketSize"].RunCommand();
-                while (false == this.m_Camera.Features["GVSPAdjustPacketSize"].IsCommandDone())
+                try
+                {
+                    this.m_Camera.Features["GVSPAdjustPacketSize"].RunCommand();
+                    while (false == this.m_Camera.Features["GVSPAdjustPacketSize"].IsCommandDone())
+                    {
+                        // Do Nothing
+                    }
+                }
+                catch
                 {
                     // Do Nothing
                 }
-            }
-            catch
-            {
-                // Do Nothing
             }
         }
 
@@ -342,25 +347,27 @@ namespace AsynchronousGrab
                 }
 
                 // Try lower usb3 bandwidth
-                this.m_Camera2.Features["DeviceLinkThroughputLimit"].IntValue = 100000000;
+                if (this.m_Camera2.Features["StreamType"].StringValue == "USB3")
+                    this.m_Camera2.Features["DeviceLinkThroughputLimit"].IntValue = 120000000;
             }
 
-            /*
-                        // Set the GeV packet size to the highest possible value
-                        // (In this example we do not test whether this cam actually is a GigE cam)
-                        try
-                        {
-                            this.m_Camera2.Features["GVSPAdjustPacketSize"].RunCommand();
-                            while (false == this.m_Camera2.Features["GVSPAdjustPacketSize"].IsCommandDone())
-                            {
-                                // Do Nothing
-                            }
-                        }
-                        catch
-                        {
-                            // Do Nothing
-                        }
-            */
+            // Set the GeV packet size to the highest possible value
+            // (In this example we do not test whether this cam actually is a GigE cam)
+            if (this.m_Camera2.Features["StreamType"].StringValue == "GEV")
+            {
+                try
+                {
+                    this.m_Camera2.Features["GVSPAdjustPacketSize"].RunCommand();
+                    while (false == this.m_Camera2.Features["GVSPAdjustPacketSize"].IsCommandDone())
+                    {
+                        // Do Nothing
+                    }
+                }
+                catch
+                {
+                    // Do Nothing
+                }
+            }
         }
 
         // Closes the currently opened camera if it was opened

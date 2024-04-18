@@ -4,7 +4,7 @@ Vimba .NET C# sample for two cameras based on \VimbaNET_Examples\AsynchronousGra
 
 ## TODO
 1. https://github.com/avtcn/vmbnet_bayerrg8_to_rgb8_bitmap_converstion
-2. support BayerRG8 pixelformat
+2. support `BayerRG8` pixelformat
 
 
 ## Screenshot
